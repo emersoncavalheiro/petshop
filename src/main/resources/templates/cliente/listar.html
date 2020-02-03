@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Clientes</title>
+</head>
+<body>
+    <h1>Clientes cadastrados: </h1>
+    <li th:each=" cli : ${clientes}">
+        <span th:text="${cli.nome}"></span>
+        -
+        <span th:text="${cli.cpf}"></span>
+
+        <a th:href="@{/admin/cliente/excluir(id=${cli.id})}">X</a>
+    </li>
+
+</body>
+</html>

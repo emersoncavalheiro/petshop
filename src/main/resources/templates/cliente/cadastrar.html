@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>PetShop - Cadastrar Cliente</title>
+</head>
+<body>
+    <h1>Cadastro de Cliente</h1>
+
+    <form method="post" th:action="@{/admin/cliente/salvar}">
+
+    <form>
+        <span>Nome: </span>
+        <input name="nome"><br>
+
+        <span>CPF: </span>
+        <input name="cpf"><br>
+
+        <span>Nascimento: </span>
+        <input name="nascimento"><br>
+
+        <input type="submit" value="Cadastrar">
+
+    </form>>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Petshop</title>
+</head>
+<body>
+    <h1>Bem vindo ao sistema de gestão de PetShop</h1>
+    <span>Usuário Logado: </span>
+    <span th:text="${usuarioLogado}"></span>
+
+    <h2>Menu:</h2>
+    <h3>Clientes</h3>
+    <a th:href="@{/admin/cliente/cadastrar}">Cadastrar Clientes</a><br>
+    <a th:href="@{/admin/cliente/listar}">Listar Clientes</a>
+
+    <h3>Unidades</h3>
+    <a th:href="@{/admin/unidade/cadastrar}">Cadastrar Unidades</a><br>
+    <a th:href="@{/admin/unidade/listar}">Listar Unidades</a>
+
+
+</body>
+</html>
