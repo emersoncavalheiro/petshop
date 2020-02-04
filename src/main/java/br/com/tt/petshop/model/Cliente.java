@@ -2,13 +2,25 @@ package br.com.tt.petshop.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "TB_CLIENTE")
 public class Cliente {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "nome")
     private String nome;
+
+    @Column(name = "cpf")
     private String cpf;
-    //TODO converter para localdate
+
+    @Column(name = "datadenascimento")
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private LocalDate nascimento;
 

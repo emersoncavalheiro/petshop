@@ -5,6 +5,7 @@ import br.com.tt.petshop.repository.UnidadeRowMapper.UnidadeRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.EntityManager;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -13,12 +14,17 @@ import java.util.List;
 public class UnidadeRepository {
 
     private JdbcTemplate jdbcTemplate;
+    private EntityManager entityManager;
 
-    public UnidadeRepository(JdbcTemplate jdbcTemplate) {
+    public UnidadeRepository(JdbcTemplate jdbcTemplate, EntityManager entityManager) {
         this.jdbcTemplate = jdbcTemplate;
+        this.entityManager = entityManager;
     }
 
-    private List<Unidade> db = new ArrayList<>();
+    public Unidade update(Unidade unidade){
+        Unidade unidadeSalva = entityManager.merge(unidade);
+        return unidadeSalva;
+    }
 
     public Unidade save(Unidade unidade){
 
