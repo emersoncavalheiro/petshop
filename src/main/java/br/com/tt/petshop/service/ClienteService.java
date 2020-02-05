@@ -24,7 +24,12 @@ public class ClienteService {
         return clienteRepository.findAll();
     }
 
-    public void excluir(Long id) {
+    public Cliente buscarPorId(Long id){
+        return this.clienteRepository.findById(id);
+    }
+
+    public void deletarPorId(Long id) {
         this.clienteRepository.deleteById(id);
     }
+
 }

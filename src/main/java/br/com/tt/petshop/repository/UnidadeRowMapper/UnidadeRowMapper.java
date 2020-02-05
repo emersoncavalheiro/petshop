@@ -11,6 +11,7 @@ public class UnidadeRowMapper implements RowMapper<Unidade> {
     @Override
     public Unidade mapRow(ResultSet rs, int rowNum) throws SQLException {
         Unidade unidade = new Unidade();
+        unidade.setId(rs.getLong("id"));
         unidade.setNome(rs.getString("nome"));
         unidade.setEndereco(rs.getString("endereco"));
         return unidade;

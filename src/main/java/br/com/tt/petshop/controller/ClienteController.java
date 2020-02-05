@@ -46,7 +46,7 @@ public class ClienteController {
 
     @RequestMapping("admin/cliente/excluir")
     public String excluir(@RequestParam Long id){
-        this.clienteService.excluir(id);
+        this.clienteService.deletarPorId(id);
 
         return "redirect:/admin/cliente/listar";
 
