@@ -2,8 +2,11 @@ package br.com.tt.petshop.api;
 
 import br.com.tt.petshop.model.Cliente;
 import br.com.tt.petshop.service.ClienteService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -17,8 +20,8 @@ public class ClienteEnpoint {
     }
 
     @GetMapping
-    public List<Cliente> buscarTodos(){
-        return clienteService.listar();
+    public ResponseEntity<List<Cliente>> buscarTodos(){
+        return ResponseEntity.status(HttpStatus.OK).header("X-SITUACAO", "Ativos").body(clienteService.listar());
     }
 
     @GetMapping("/{id}")
@@ -27,13 +30,17 @@ public class ClienteEnpoint {
     }
 
     @PostMapping
-    public void criar(@RequestBody Cliente cliente){
-        clienteService.criar(cliente);
+    public ResponseEntity criar(@RequestBody Cliente cliente){
+        Cliente clienteSalvo = clienteService.criar(cliente);
+        URI uri = URI.create("/clientes/"+clienteSalvo.getId());
+        return ResponseEntity.created(uri).build();
     }
 
     @DeleteMapping("/{id}")
-    public void deletar(@PathVariable Long id){
+    public ResponseEntity deletar(@PathVariable Long id){
         clienteService.deletarPorId(id);
+
+        return ResponseEntity.noContent().build();
     }
 
 }

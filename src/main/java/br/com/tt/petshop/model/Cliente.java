@@ -31,7 +31,11 @@ public class Cliente {
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        String nomeSanitizado = null;
+        if(nome != null){
+            nomeSanitizado = nome.trim().replaceAll("[ ]+", " ").replaceAll("[^a-zA-Z0-9]", "");
+        }
+        this.nome = nomeSanitizado;
     }
 
     public String getCpf() {

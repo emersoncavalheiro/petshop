@@ -15,8 +15,9 @@ public class ClienteService {
         this.clienteRepository = clienteRepository;
     }
 
-    public void criar(Cliente cliente){
-        this.clienteRepository.save(cliente);
+    public Cliente criar(Cliente cliente){
+
+        return this.clienteRepository.save(cliente);
 
     }
 
