@@ -33,8 +33,9 @@ public class ClienteRepository {
      //   return cliente;
    // }
 
-    public List<Cliente> findAll(){
-        return jdbcTemplate.query("select id , nome, cpf, datadenascimento from TB_CLIENTE" , new ClienteRowMapper());
+    public List<Cliente> findAll() {
+
+        return entityManager.createQuery("from Cliente").getResultList();
     }
 
     public Cliente findById(Long id){
