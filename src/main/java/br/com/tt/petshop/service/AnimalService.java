@@ -23,4 +23,12 @@ public class AnimalService {
     public List<Animal> findAll(){
         return animalRepository.findAll();
     }
+
+    public void criar(Animal animal) {
+        this.animalRepository.save(animal);
+    }
+
+    public Animal salvar(Animal animal) {
+        return this.animalRepository.save(animal);
+    }
 }

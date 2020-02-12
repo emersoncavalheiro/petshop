@@ -16,7 +16,9 @@ public class AnimalOutDto {
         id = entidade.getId();
         nome = entidade.getNome();
         nascimento = entidade.getNascimento();
+        if(entidade.getCliente() != null){
         clienteNome = entidade.getCliente().getNome();
+        }
     }
 
     public Long getId() {

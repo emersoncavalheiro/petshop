@@ -2,6 +2,7 @@ package br.com.tt.petshop.service;
 
 import br.com.tt.petshop.model.Produto;
 import br.com.tt.petshop.repository.ProdutoRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -12,7 +13,7 @@ public class ProdutoService {
 
     private ProdutoRepository produtoRepository;
 
-    public ProdutoService(ProdutoRepository produtoRepository) {
+    public ProdutoService(ProdutoRepository produtoRepository, ModelMapper modelMapper) {
         this.produtoRepository = produtoRepository;
     }
 
