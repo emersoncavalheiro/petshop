@@ -28,11 +28,6 @@ public class ClienteRepository {
         return cliente;
     }
 
-   // public Cliente saveJdbc(Cliente cliente){
-    //    jdbcTemplate.update("insert into TB_CLIENTE (nome, cpf, datadenascimento) values (? , ?, ?)", cliente.getNome(), cliente.getCpf(), cliente.getNascimento());
-     //   return cliente;
-   // }
-
     public List<Cliente> findAll() {
 
         return entityManager.createQuery("from Cliente").getResultList();
