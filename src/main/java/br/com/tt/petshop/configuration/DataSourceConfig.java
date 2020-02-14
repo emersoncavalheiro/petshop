@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import javax.sql.DataSource;
 
-@Configuration
+/*@Configuration
 public class DataSourceConfig {
     @Bean
     public DataSource mysqlDataSource() {
@@ -17,3 +17,5 @@ public class DataSourceConfig {
         return dataSource;
     }
 }
+
+ */

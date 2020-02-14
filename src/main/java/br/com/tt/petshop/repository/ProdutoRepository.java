@@ -11,6 +11,8 @@ import java.util.List;
 @Repository
 public interface ProdutoRepository extends JpaRepository<Produto, Long> {
     List<Produto> findAllByValorGreaterThan(BigDecimal valorMaiorQue);
+
     List<Produto> findByDescricaoContaining(String descricao);
+
     List<Produto> findAllByValorGreaterThanAndDescricaoContaining(BigDecimal valorMaiorQue, String descricao);
 }
